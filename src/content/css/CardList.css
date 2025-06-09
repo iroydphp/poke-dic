@@ -1,0 +1,123 @@
+.wapper {
+   width: 100%;
+   max-width: 1155px;
+   margin: 40px auto;
+   padding: 24px;
+   background: #23272f;
+   border-radius: 16px;
+   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+}
+
+.wapper .input-box {
+   background-color: #353535;
+   height: auto;
+   padding: 32px 0 24px 0;
+   border-radius: 12px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 16px;
+}
+
+.wapper .input-box input[type='text'] {
+   width: 260px;
+   height: 38px;
+   margin: 0;
+   border: none;
+   border-radius: 8px;
+   padding-left: 14px;
+   font-size: 16px;
+   outline: none;
+   background: #222;
+   color: #fff;
+   transition: box-shadow 0.2s;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.wapper .input-box input[type='text']:focus {
+   box-shadow: 0 0 0 2px #4fc3f7;
+}
+
+.wapper .input-box button {
+   height: 38px;
+   padding: 0 18px;
+   border: none;
+   border-radius: 8px;
+   background: #4fc3f7;
+   color: #fff;
+   font-weight: bold;
+   font-size: 15px;
+   cursor: pointer;
+   transition: background 0.2s;
+   margin-left: 4px;
+}
+.wapper .input-box button:hover {
+   background: #0288d1;
+}
+
+.icon-search {
+   font-size: 30px;
+   color: #4fc3f7;
+   margin-top: 5px;
+}
+
+.card-list {
+   margin-top: 36px;
+}
+
+.pokemon-list {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 5px;
+   justify-content: flex-start;
+   padding: 0;
+   list-style: none;
+}
+
+.pokemon-item {
+   background: #fff;
+   border-radius: 12px;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+   padding: 18px 24px 12px 24px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 140px;
+   transition: transform 0.15s, box-shadow 0.15s;
+}
+.pokemon-item:hover {
+   transform: translateY(-6px) scale(1.04);
+   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.pokemon-img {
+   width: 80px;
+   height: 80px;
+   margin-bottom: 10px;
+}
+
+.pokemon-name {
+   font-size: 18px;
+   font-weight: bold;
+   color: #23272f;
+   text-align: center;
+   margin-top: 4px;
+}
+
+/* 반응형 */
+@media (max-width: 700px) {
+   .wapper {
+      width: 98%;
+      padding: 8px;
+   }
+   .pokemon-list {
+      gap: 12px;
+   }
+   .pokemon-item {
+      width: 100px;
+      padding: 10px 8px 8px 8px;
+   }
+   .pokemon-img {
+      width: 60px;
+      height: 60px;
+   }
+}
