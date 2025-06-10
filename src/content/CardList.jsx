@@ -13,7 +13,7 @@ function CardList() {
    // 포켓몬 리스트 불러오기 (처음 30마리 예시)
    useEffect(() => {
       const fetchPokemons = async () => {
-         const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
+         const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=555')
          const data = await res.json()
          // 각 포켓몬의 상세 정보(이름, 이미지, 한글명) 가져오기
          const details = await Promise.all(
