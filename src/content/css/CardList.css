@@ -1,18 +1,29 @@
+/* 게임보이 스타일 폰트 적용 (Google Fonts: 'Press Start 2P' 추천) */
+@import url('https://fastly.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+
+body {
+   margin: 0;
+   padding: 0;
+   background: #bfc6b8; /* 게임보이 본체 색상 */
+   font-family: 'Press Start 2P', monospace;
+}
+
 .wapper {
    width: 100%;
    max-width: 1155px;
    margin: 40px auto;
    padding: 24px;
-   background: #23272f;
-   border-radius: 16px;
-   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+   background: #e0e4d9; /* 게임보이 화면 배경 */
+   border: 6px solid #7a7a7a; /* 굵은 테두리 */
+   border-radius: 12px;
+   box-shadow: 0 8px 32px #6b6b6b;
 }
 
 .wapper .input-box {
-   background-color: #353535;
-   height: auto;
-   padding: 32px 0 24px 0;
-   border-radius: 12px;
+   background-color: #bfc6b8;
+   border: 4px solid #7a7a7a;
+   border-radius: 8px;
+   padding: 24px 0 16px 0;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -20,44 +31,45 @@
 }
 
 .wapper .input-box input[type='text'] {
-   width: 260px;
-   height: 38px;
-   margin: 0;
-   border: none;
-   border-radius: 8px;
-   padding-left: 14px;
-   font-size: 16px;
-   outline: none;
-   background: #222;
-   color: #fff;
-   transition: box-shadow 0.2s;
-   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+   width: 220px;
+   height: 32px;
+   border: 2px solid #7a7a7a;
+   border-radius: 4px;
+   padding-left: 10px;
+   font-size: 13px;
+   font-family: 'Press Start 2P', monospace;
+   background: #e0e4d9;
+   color: #3a4d39;
+   box-shadow: none;
 }
 .wapper .input-box input[type='text']:focus {
-   box-shadow: 0 0 0 2px #4fc3f7;
+   border-color: #4fc3f7;
+   outline: none;
 }
 
 .wapper .input-box button {
-   height: 38px;
-   padding: 0 18px;
-   border: none;
-   border-radius: 8px;
-   background: #4fc3f7;
-   color: #fff;
-   font-weight: bold;
-   font-size: 15px;
+   height: 32px;
+   padding: 0 14px;
+   border: 2px solid #7a7a7a;
+   border-radius: 4px;
+   background: #8ac926; /* 게임보이 버튼 느낌 */
+   color: #23272f;
+   font-family: 'Press Start 2P', monospace;
+   font-size: 13px;
    cursor: pointer;
-   transition: background 0.2s;
+   box-shadow: 2px 2px 0 #7a7a7a;
    margin-left: 4px;
+   transition: background 0.2s, box-shadow 0.2s;
 }
 .wapper .input-box button:hover {
-   background: #0288d1;
+   background: #6aaf1e;
+   box-shadow: 1px 1px 0 #7a7a7a;
 }
 
 .icon-search {
-   font-size: 30px;
-   color: #4fc3f7;
-   margin-top: 5px;
+   font-size: 24px;
+   color: #8ac926;
+   margin-top: 2px;
 }
 
 .card-list {
@@ -74,33 +86,37 @@
 }
 
 .pokemon-item {
-   background: #fff;
-   border-radius: 12px;
-   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-   padding: 18px 24px 12px 24px;
+   background: #c7e89e; /* 게임보이 화면 느낌 */
+   border: 3px solid #7a7a7a;
+   border-radius: 8px;
+   box-shadow: 2px 2px 0 #7a7a7a;
+   padding: 14px 12px 8px 12px;
    display: flex;
    flex-direction: column;
    align-items: center;
-   width: 140px;
+   width: 110px;
    transition: transform 0.15s, box-shadow 0.15s;
+   user-select: none;
+   cursor: pointer;
 }
 .pokemon-item:hover {
-   transform: translateY(-6px) scale(1.04);
-   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+   transform: translateY(-4px) scale(1.03);
+   box-shadow: 4px 4px 0 #7a7a7a;
 }
 
 .pokemon-img {
-   width: 80px;
-   height: 80px;
-   margin-bottom: 10px;
+   width: 60px;
+   height: 60px;
+   margin-bottom: 8px;
+   image-rendering: pixelated; /* 픽셀 느낌 */
 }
 
 .pokemon-name {
-   font-size: 18px;
-   font-weight: bold;
+   font-size: 11px;
+   font-family: 'Press Start 2P', monospace;
    color: #23272f;
    text-align: center;
-   margin-top: 4px;
+   margin-top: 2px;
 }
 
 /* 반응형 */
@@ -110,14 +126,14 @@
       padding: 8px;
    }
    .pokemon-list {
-      gap: 12px;
+      gap: 8px;
    }
    .pokemon-item {
-      width: 100px;
-      padding: 10px 8px 8px 8px;
+      width: 80px;
+      padding: 8px 4px 4px 4px;
    }
    .pokemon-img {
-      width: 60px;
-      height: 60px;
+      width: 40px;
+      height: 40px;
    }
 }
