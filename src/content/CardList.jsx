@@ -180,7 +180,7 @@ function CardList() {
          <div className="wapper">
             <div className="input-box">
                <span className="icon-search">
-                  <img src="../assets/images/icon_ball_b.png" />
+                  <img src="https://www.pokemonkorea.co.kr/img/icon/icon_ball_b.png" alt="logo" />
                </span>
                <input
                   type="text"
