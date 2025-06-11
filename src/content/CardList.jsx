@@ -10,17 +10,17 @@ function CardList() {
    const [checked, setChecked] = useState({}) // 체크박스 상태
    const clickTimer = useRef(null)
 
-   // 포켓몬 리스트 불러오기 (처음 30마리 예시)
+   // 포켓몬 리스트 불러오기 (1~5세대 555마리)
    useEffect(() => {
       const fetchPokemons = async () => {
          const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=555')
          const data = await res.json()
-         // 각 포켓몬의 상세 정보(이름, 이미지, 한글명) 가져오기
+         // 포켓몬 상세 정보
          const details = await Promise.all(
             data.results.map(async (pokemon) => {
                const pokeRes = await fetch(pokemon.url)
                const pokeData = await pokeRes.json()
-               // species에서 한글명 가져오기
+               // 한글 이름 추출
                const speciesRes = await fetch(pokeData.species.url)
                const speciesData = await speciesRes.json()
                const koreanNameObj = speciesData.names.find((n) => n.language.name === 'ko')
@@ -85,7 +85,7 @@ function CardList() {
       setDisabledCards((prev) => prev.filter((id) => !idsToDelete.includes(id)))
    }, [checked])
 
-   // 카드 클릭 시 진화 (체크 해제된 카드만, 비활성화된 카드는 무시)
+   // 진화
    const handleCardClick = useCallback(
       async (pokemon) => {
          if (checked[pokemon.id]) return
@@ -102,7 +102,7 @@ function CardList() {
                const evoChainData = await evoRes.json()
                let evo = evoChainData.chain
                const evoNames = []
-               // 진화체인을 따라가며 모든 진화 단계의 이름을 배열에 담음
+               // 진화 시 한글이름 설정
                while (evo) {
                   evoNames.push(evo.species.name)
                   evo = evo.evolves_to && evo.evolves_to[0]
@@ -144,7 +144,6 @@ function CardList() {
       setDisabledCards((prev) => (prev.includes(id) ? prev.filter((d) => d !== id) : [...prev, id]))
    }, [])
 
-   // 렌더링 최적화: filtered.map 결과 useMemo
    const renderedList = useMemo(
       () =>
          filtered.map((pokemon) => {
